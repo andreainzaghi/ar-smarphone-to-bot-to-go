@@ -10,7 +10,6 @@
     "skipLibCheck": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "allowImportingTsExtensions": true,
 
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -19,7 +18,9 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "outDir": "./dist/app"
+    "outDir": "./dist/app",
+    "noEmit": true,
+  "allowImportingTsExtensions": true
   },
   "include": ["src"]
 }

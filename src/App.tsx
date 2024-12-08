@@ -46,7 +46,7 @@ export default function App() {
       {/* Alert */}
       {showAlert && (
         <Dialog open={showAlert}>
-  <DialogContent className="w-[80%] max-w-md bg-gray-800 text-white shadow-lg rounded-lg p-6">
+  <DialogContent className="w-[85%] max-w-md bg-gray-800 text-white shadow-lg rounded-lg p-6">
     <DialogHeader>
       <DialogTitle className="text-2xl font-bold text-white">Attenzione!</DialogTitle>
       <DialogDescription className="mt-2 text-gray-200 text-left">

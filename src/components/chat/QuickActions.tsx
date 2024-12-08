@@ -60,11 +60,11 @@ export function QuickActions({ onActionSelect }: QuickActionsProps) {
           <Button
             key={action.id}
             variant="outline"
-            className="flex flex-col items-center gap-2 h-auto py-4"
+            className="flex flex-col items-center gap-2 h-auto py-2"
             onClick={() => onActionSelect(action.message)}
           >
-            <Icon className="h-5 w-5" />
-            <span className="text-sm">{action.label}</span>
+            <Icon className="h-4 w-4" />
+            <span className="text-xs">{action.label}</span>
           </Button>
         );
       })}

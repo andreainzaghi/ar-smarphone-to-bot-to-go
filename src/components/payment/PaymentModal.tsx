@@ -19,14 +19,17 @@ import { useOrderHistory } from '@/hooks/use-order-history';
 interface PaymentModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  skipReview?: boolean; // Prop opzionale
 }
 
 type Step = 'review' | 'payment' | 'thank-you';
 
-export function PaymentModal({ open, onOpenChange }: PaymentModalProps) {
+
+export function PaymentModal({ open, onOpenChange, skipReview = false }: PaymentModalProps) {
   const { items, clearCart } = useCart();
   const { addOrder } = useOrderHistory();
-  const [step, setStep] = useState<Step>('review');
+  const [step, setStep] = useState<Step>(skipReview ? 'payment' : 'review'); // Imposta lo step iniziale
+
   const [processing, setProcessing] = useState(false);
   const [orderId, setOrderId] = useState<string | null>(null);
   const [paymentMethod, setPaymentMethod] = useState('1');

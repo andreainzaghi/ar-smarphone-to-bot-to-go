@@ -116,9 +116,11 @@ export function CartPage() {
       </div>
 
       <PaymentModal 
-        open={showPayment} 
-        onOpenChange={setShowPayment} 
-      />
+  open={showPayment} 
+  onOpenChange={setShowPayment}
+  skipReview={true} // Salta la fase di recensione
+/>
+
     </motion.div>
   );
 }

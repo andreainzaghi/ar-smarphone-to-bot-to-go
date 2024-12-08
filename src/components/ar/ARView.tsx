@@ -19,11 +19,11 @@ interface ARViewProps {
 function Dish({ worldPosition }: { worldPosition: THREE.Vector3 }) {
   const { camera } = useThree();
   const dishRef = useRef<THREE.Group>(null);
-  
+
   useEffect(() => {
     if (dishRef.current) {
       dishRef.current.position.copy(worldPosition);
-      
+
       const lookAtPos = new THREE.Vector3(
         camera.position.x,
         dishRef.current.position.y,
@@ -47,27 +47,21 @@ function Dish({ worldPosition }: { worldPosition: THREE.Vector3 }) {
 
       <mesh position={[0, 0.2, 0]} castShadow>
         <cylinderGeometry args={[0.4, 0.4, 0.2, 32]} />
-        <meshStandardMaterial 
-          color="#e6a23c"
-          roughness={0.7}
-          metalness={0.2}
-        />
+        <meshStandardMaterial color="#e6a23c" roughness={0.7} metalness={0.2} />
       </mesh>
 
       <group position={[0.2, 0.3, 0.2]}>
         <mesh castShadow scale={[0.1, 0.1, 0.1]}>
           <sphereGeometry />
-          <meshStandardMaterial 
-            color="#4caf50"
-            roughness={0.5}
-          />
+          <meshStandardMaterial color="#4caf50" roughness={0.5} />
         </mesh>
-        <mesh position={[0.05, 0.05, 0]} castShadow scale={[0.08, 0.08, 0.08]}>
+        <mesh
+          position={[0.05, 0.05, 0]}
+          castShadow
+          scale={[0.08, 0.08, 0.08]}
+        >
           <sphereGeometry />
-          <meshStandardMaterial 
-            color="#4caf50"
-            roughness={0.5}
-          />
+          <meshStandardMaterial color="#4caf50" roughness={0.5} />
         </mesh>
       </group>
     </group>
@@ -77,18 +71,18 @@ function Dish({ worldPosition }: { worldPosition: THREE.Vector3 }) {
 function Scene({ onClick }: { onClick: (point: THREE.Vector3) => void }) {
   const { camera, raycaster } = useThree();
   const groundPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
-  
+
   const handleClick = (event: ThreeEvent<MouseEvent>) => {
     event.stopPropagation();
-    
-    // Calculate normalized device coordinates
-    const x = (event.nativeEvent.offsetX / event.nativeEvent.target.clientWidth) * 2 - 1;
-    const y = -(event.nativeEvent.offsetY / event.nativeEvent.target.clientHeight) * 2 + 1;
-    
-    // Set up raycaster
+
+    const canvas = event.target as HTMLCanvasElement;
+    if (!canvas) return;
+
+    const x = (event.nativeEvent.offsetX / canvas.clientWidth) * 2 - 1;
+    const y = -(event.nativeEvent.offsetY / canvas.clientHeight) * 2 + 1;
+
     raycaster.setFromCamera(new THREE.Vector2(x, y), camera);
-    
-    // Find intersection with ground plane
+
     const intersection = new THREE.Vector3();
     if (raycaster.ray.intersectPlane(groundPlane, intersection)) {
       onClick(intersection);
@@ -104,11 +98,7 @@ function Scene({ onClick }: { onClick: (point: THREE.Vector3) => void }) {
         shadow-mapSize={[1024, 1024]}
       />
       <ambientLight intensity={0.5} />
-      <mesh 
-        rotation={[-Math.PI / 2, 0, 0]} 
-        onClick={handleClick}
-        visible={false}
-      >
+      <mesh rotation={[-Math.PI / 2, 0, 0]} onClick={handleClick} visible={false}>
         <planeGeometry args={[100, 100]} />
         <meshBasicMaterial transparent opacity={0} />
       </mesh>
@@ -120,13 +110,16 @@ export function ARView({ open, onOpenChange }: ARViewProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [stream, setStream] = useState<MediaStream | null>(null);
   const [error, setError] = useState<string>('');
-  const [worldPosition, setWorldPosition] = useState<THREE.Vector3>(new THREE.Vector3(0, 0, -2));
+  const [worldPosition, setWorldPosition] = useState<THREE.Vector3>(
+    new THREE.Vector3(0, 0, -2)
+  );
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkDevice = () => {
-      const userAgent = navigator.userAgent.toLowerCase();
-      const isMobileDevice = /mobile|tablet|android|ipad|iphone|ipod/.test(userAgent);
+      const isMobileDevice = /mobile|tablet|android|ipad|iphone|ipod/.test(
+        navigator.userAgent.toLowerCase()
+      );
       setIsMobile(isMobileDevice);
     };
 
@@ -137,35 +130,14 @@ export function ARView({ open, onOpenChange }: ARViewProps) {
 
   const startCamera = async () => {
     try {
-      const devices = await navigator.mediaDevices.enumerateDevices();
-      const videoDevices = devices.filter(device => device.kind === 'videoinput');
-
-      let constraints: MediaStreamConstraints = {
+      const constraints: MediaStreamConstraints = {
         video: {
           facingMode: isMobile ? 'environment' : 'user',
           width: { ideal: 1920 },
-          height: { ideal: 1080 }
+          height: { ideal: 1080 },
         },
-        audio: false
+        audio: false,
       };
-
-      if (isMobile && videoDevices.length > 1) {
-        const backCamera = videoDevices.find(device => 
-          device.label.toLowerCase().includes('back') || 
-          device.label.toLowerCase().includes('environment')
-        );
-        
-        if (backCamera) {
-          constraints = {
-            video: {
-              deviceId: { exact: backCamera.deviceId },
-              width: { ideal: 1920 },
-              height: { ideal: 1080 }
-            },
-            audio: false
-          };
-        }
-      }
 
       const mediaStream = await navigator.mediaDevices.getUserMedia(constraints);
       setStream(mediaStream);
@@ -174,20 +146,14 @@ export function ARView({ open, onOpenChange }: ARViewProps) {
       }
       setError('');
     } catch (err) {
-      setError('Unable to access camera. Please ensure you have granted camera permissions.');
-      console.error('Camera error:', err);
+      setError('Unable to access camera. Please ensure camera permissions are granted.');
+      console.error(err);
     }
   };
 
   const stopCamera = () => {
-    if (stream) {
-      stream.getTracks().forEach(track => track.stop());
-      setStream(null);
-    }
-  };
-
-  const handlePlacement = (point: THREE.Vector3) => {
-    setWorldPosition(point);
+    stream?.getTracks().forEach((track) => track.stop());
+    setStream(null);
   };
 
   useEffect(() => {
@@ -196,10 +162,8 @@ export function ARView({ open, onOpenChange }: ARViewProps) {
     } else {
       stopCamera();
     }
-    return () => {
-      stopCamera();
-    };
-  }, [open, isMobile]);
+    return () => stopCamera();
+  }, [open]);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -207,7 +171,7 @@ export function ARView({ open, onOpenChange }: ARViewProps) {
         <DialogHeader>
           <DialogTitle>Augmented Reality View</DialogTitle>
         </DialogHeader>
-        
+
         <div className="relative aspect-video bg-black rounded-lg overflow-hidden">
           {error ? (
             <div className="absolute inset-0 flex items-center justify-center text-center p-4">
@@ -224,16 +188,16 @@ export function ARView({ open, onOpenChange }: ARViewProps) {
               <div className="absolute inset-0">
                 <Canvas
                   shadows
-                  camera={{ 
+                  camera={{
                     position: [0, 2, 0],
                     fov: 75,
                     near: 0.1,
-                    far: 1000
+                    far: 1000,
                   }}
                 >
-                  <Scene onClick={handlePlacement} />
+                  <Scene onClick={setWorldPosition} />
                   <Dish worldPosition={worldPosition} />
-                  <OrbitControls 
+                  <OrbitControls
                     enablePan={false}
                     enableZoom={false}
                     maxPolarAngle={Math.PI / 2}
@@ -243,7 +207,7 @@ export function ARView({ open, onOpenChange }: ARViewProps) {
               </div>
             </>
           )}
-          
+
           <div className="absolute top-2 right-2">
             <Button
               variant="destructive"

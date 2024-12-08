@@ -58,7 +58,7 @@ export function MenuItem({ item }: MenuItemProps) {
                 ({item.reviews})
               </span>
             </div>
-            <Button size="xs" onClick={() => addItem(item)}>
+            <Button size="sm" onClick={() => addItem(item)}>
               <Plus className="h-6 w-14" />
             </Button>
           </div>

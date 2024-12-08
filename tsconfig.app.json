@@ -19,7 +19,8 @@
       "@/*": ["./src/*"]
     },
     "outDir": "./dist/app",
-    "noEmit": true,
+    "emitDeclarationOnly": true,
+
   "allowImportingTsExtensions": true
   },
   "include": ["src"]

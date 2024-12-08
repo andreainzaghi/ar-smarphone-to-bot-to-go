@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { XCircle } from 'lucide-react';
 import { Canvas, useThree, ThreeEvent } from '@react-three/fiber';
-import { OrbitControls, Stage } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,

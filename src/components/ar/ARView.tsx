@@ -8,7 +8,7 @@ interface ARViewProps {
   onOpenChange: (open: boolean) => void;
 }
 
-export function ARView({ open, onOpenChange }: ARViewProps) {
+const ARView: React.FC<ARViewProps> = ({ open, onOpenChange }) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[600px]">
@@ -52,4 +52,6 @@ export function ARView({ open, onOpenChange }: ARViewProps) {
       </DialogContent>
     </Dialog>
   );
-}
+};
+
+export default ARView;

@@ -1,7 +1,7 @@
 import { formatDistanceToNow } from 'date-fns';
 import { useOrderHistory } from '@/hooks/use-order-history';
-import { ScrollArea } from './components/ui/scroll-area';
-import { Badge } from './components/ui/badge';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { Badge } from '@/components/ui/badge';
 import { formatCurrency } from '@/lib/utils';
 
 const statusColors = {

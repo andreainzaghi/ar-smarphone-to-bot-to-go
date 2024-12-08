@@ -6,9 +6,9 @@ import { MenuPage } from '@/pages/MenuPage';
 import { CartPage } from '@/pages/CartPage';
 import { ChatbotPage } from '@/pages/ChatbotPage';
 import { OrdersPage } from '@/pages/OrdersPage';
-import { ChatbotButton } from './components/chat/ChatbotButton';
-import { Toaster } from './components/ui/sonner';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './components/ui/dialog';
+import { ChatbotButton } from '@/components/chat/ChatbotButton';
+import { Toaster } from '@/components/ui/sonner';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
 export default function App() {
   const location = useLocation();

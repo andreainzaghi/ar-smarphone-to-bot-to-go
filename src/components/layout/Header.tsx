@@ -1,6 +1,6 @@
 import {  ShoppingBag } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from './components/ui/button';
+import { Button } from '@/components/ui/button';
 import { useCart } from '@/hooks/use-cart';
 import { LanguageSwitcher } from './LanguageSwitcher';
 

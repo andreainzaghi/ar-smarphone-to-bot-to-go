@@ -5,11 +5,9 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
-    "baseUrl": ".", // Necessario per i percorsi relativi
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"] // L'alias '@' punta alla cartella 'src'
+      "@/*": ["./src/*"]
     }
-  },
-  "include": ["src/**/*.ts", "src/**/*.tsx"], // Include tutti i file TypeScript
-  "exclude": ["node_modules"] // Esclude 'node_modules'
+  }
 }

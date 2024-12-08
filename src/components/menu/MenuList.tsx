@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Search } from 'lucide-react';
-import { Input } from './components/ui/input';
+import { Input } from '@/components/ui/input';
 import { MenuItem } from './MenuItem';
 import { DietaryFilters } from './DietaryFilters';
 import { menuItems } from '@/data/menu';

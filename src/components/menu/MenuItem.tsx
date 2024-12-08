@@ -1,10 +1,10 @@
 import { Plus, ViewIcon } from 'lucide-react';
 import { useState } from 'react';
-import { Button } from './components/ui/button';
-import { Card } from './components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
 import { MenuItem as MenuItemType } from '@/types';
 import { useCart } from '@/hooks/use-cart';
-import { ARView } from './components/ar/ARView';
+import { ARView } from '@/components/ar/ARView';
 
 interface MenuItemProps {
   item: MenuItemType;

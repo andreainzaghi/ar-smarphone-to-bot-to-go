@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from './components/ui/button';
-import { ScrollArea } from './components/ui/scroll-area';
-import { ChatMessage } from './components/chat/ChatMessage';
-import { ChatInput } from './components/chat/ChatInput';
-import { QuickActions } from './components/chat/QuickActions';
+import { Button } from '@/components/ui/button';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { ChatMessage } from '@/components/chat/ChatMessage';
+import { ChatInput } from '@/components/chat/ChatInput';
+import { QuickActions } from '@/components/chat/QuickActions';
 import { Message } from '@/types';
 
 export function ChatbotPage() {

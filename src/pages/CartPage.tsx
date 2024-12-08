@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Trash2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
+import { Button } from './components/ui/button';
 import { useCart } from '@/hooks/use-cart';
 import { formatCurrency } from '@/lib/utils';
-import { PaymentModal } from '@/components/payment/PaymentModal';
+import { PaymentModal } from './components/payment/PaymentModal';
 
 export function CartPage() {
   const navigate = useNavigate();

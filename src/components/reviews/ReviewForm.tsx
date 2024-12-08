@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Star } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
+import { Button } from './components/ui/button';
+import { Textarea } from './components/ui/textarea';
 import { useReviews } from '@/hooks/use-reviews';
 import { MenuItem } from '@/types';
 

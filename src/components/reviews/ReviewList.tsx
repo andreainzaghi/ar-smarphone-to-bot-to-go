@@ -1,6 +1,6 @@
 import { formatDistanceToNow } from 'date-fns';
 import { Star } from 'lucide-react';
-import { ScrollArea } from '@/components/ui/scroll-area';
+import { ScrollArea } from './components/ui/scroll-area';
 import { useReviews } from '@/hooks/use-reviews';
 import { MenuItem } from '@/types';
 

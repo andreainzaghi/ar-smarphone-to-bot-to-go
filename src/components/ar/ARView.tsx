@@ -2,13 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import { XCircle } from 'lucide-react';
 import { Canvas, useThree, ThreeEvent } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import { Button } from '@/components/ui/button';
+import { Button } from './components/ui/button';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog';
+} from './components/ui/dialog';
 import * as THREE from 'three';
 
 interface ARViewProps {

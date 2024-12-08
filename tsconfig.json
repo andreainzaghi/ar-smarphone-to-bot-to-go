@@ -5,9 +5,9 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": ".", // Imposta il punto di partenza per i percorsi relativi
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"] // Associa l'alias "@" alla cartella "src"
     }
   }
 }

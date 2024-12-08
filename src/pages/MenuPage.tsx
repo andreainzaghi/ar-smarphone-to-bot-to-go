@@ -1,5 +1,5 @@
-import { Header } from '@/components/layout/Header';
-import { MenuList } from '@/components/menu/MenuList';
+import { Header } from './components/layout/Header';
+import { MenuList } from './components/menu/MenuList';
 import { motion } from 'framer-motion';
 
 export function MenuPage() {

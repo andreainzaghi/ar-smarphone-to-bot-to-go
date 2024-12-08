@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { OrderHistory } from '@/components/order/OrderHistory';
+import { Button } from './components/ui/button';
+import { OrderHistory } from './components/order/OrderHistory';
 
 export function OrdersPage() {
   const navigate = useNavigate();

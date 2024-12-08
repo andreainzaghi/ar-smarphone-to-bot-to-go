@@ -1,4 +1,4 @@
-import { Bot, MessageSquare } from 'lucide-react';
+import { Bot } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 

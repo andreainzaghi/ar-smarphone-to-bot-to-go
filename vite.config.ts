@@ -12,12 +12,4 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  build: {
-    rollupOptions: {
-      external: ['lucide-react'], // Avoid including lucide-react in the bundle
-    },
-  },
-  esbuild: {
-    jsxInject: `import React from 'react'`, // Ensures React is injected for JSX
-  },
 });

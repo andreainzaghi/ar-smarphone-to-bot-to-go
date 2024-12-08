@@ -12,7 +12,7 @@ export function OrdersPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen p-4"
+      className="min-h-screen p-4 bg-gray-200"
     >
       <div className="max-w-2xl mx-auto">
         <div className="flex items-center justify-between mb-6">

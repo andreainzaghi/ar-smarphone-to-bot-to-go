@@ -8,6 +8,7 @@ export function MenuPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
+      className="bg-gray-200 min-h-screen" // Aggiunto il background e altezza minima per coprire tutta la pagina
     >
       <Header />
       <MenuList />

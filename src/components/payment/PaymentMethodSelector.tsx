@@ -30,8 +30,8 @@ export function PaymentMethodSelector({ selectedMethod, onSelect }: PaymentMetho
         {paymentMethods.map((method) => {
           const Icon = method.icon;
           return (
-            <SelectItem key={method.id} value={method.id}>
-              <div className="flex items-center gap-2">
+            <SelectItem key={method.id} value={method.id} className="">
+              <div className="flex items-center gap-2 bg-white p-2">
                 <Icon className="h-4 w-4" />
                 <span>{method.name}</span>
               </div>

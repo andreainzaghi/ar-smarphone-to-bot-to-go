@@ -105,7 +105,7 @@ export function PaymentModal({ open, onOpenChange, skipReview = false }: Payment
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-[500px]">
+      <DialogContent className="sm:max-w-[500px] bg-gray-200">
         <DialogHeader>
           <DialogTitle>
             {step === 'review' && 'How was your experience?'}

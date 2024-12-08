@@ -7,7 +7,7 @@ export function WelcomePage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="h-screen w-full flex flex-col items-center justify-center bg-gradient-to-br from-primary/20 to-background"
+      className="h-screen w-full flex flex-col items-center justify-center bg-gradient-to-br from-primary/20 to-background bg-gray-200"
     >
       <motion.div
         initial={{ scale: 0.5, opacity: 0 }}

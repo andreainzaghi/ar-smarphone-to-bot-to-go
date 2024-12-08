@@ -78,4 +78,7 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  input {
+    @apply !bg-white
+  }
 }

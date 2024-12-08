@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
 import { DayPicker } from 'react-day-picker';
 
@@ -7,7 +7,7 @@ import { buttonVariants } from '@/components/ui/button';
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 
-function Calendar({
+const Calendar = React.memo(function Calendar({
   className,
   classNames,
   showOutsideDays = true,
@@ -44,13 +44,11 @@ function Calendar({
           buttonVariants({ variant: 'ghost' }),
           'h-8 w-8 p-0 font-normal aria-selected:opacity-100'
         ),
-        day_range_start: 'day-range-start',
-        day_range_end: 'day-range-end',
         day_selected:
           'bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground',
         day_today: 'bg-accent text-accent-foreground',
         day_outside:
-          'day-outside text-muted-foreground opacity-50  aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30',
+          'day-outside text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30',
         day_disabled: 'text-muted-foreground opacity-50',
         day_range_middle:
           'aria-selected:bg-accent aria-selected:text-accent-foreground',
@@ -58,13 +56,13 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        IconLeft: ({ ...props }) => <ChevronLeftIcon className="h-4 w-4" />,
-        IconRight: ({ ...props }) => <ChevronRightIcon className="h-4 w-4" />,
+        IconLeft: (props) => <ChevronLeftIcon className="h-4 w-4" {...props} />,
+        IconRight: (props) => <ChevronRightIcon className="h-4 w-4" {...props} />,
       }}
       {...props}
     />
   );
-}
+});
 Calendar.displayName = 'Calendar';
 
 export { Calendar };

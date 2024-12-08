@@ -167,8 +167,8 @@ export function ARView({ open, onOpenChange }: ARViewProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[600px]">
-        <DialogHeader>
+<DialogContent className="sm:max-w-[600px] h-[50vh]">
+<DialogHeader>
           <DialogTitle>Augmented Reality View</DialogTitle>
         </DialogHeader>
 

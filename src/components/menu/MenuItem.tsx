@@ -28,14 +28,16 @@ export function MenuItem({ item }: MenuItemProps) {
               Vegetarian
             </span>
           )}
-          <Button
-            variant="secondary"
-            size="icon"
-            className="absolute top-1 left-1"
-            onClick={() => setShowAR(true)}
-          >
-            <ViewIcon className="h-4 w-4" />
-          </Button>
+  <Button
+  variant="secondary"
+  size="icon"
+  className="absolute top-1 left-1"
+  onClick={() => (window.location.href = '/index.html')}
+>
+  <ViewIcon className="h-4 w-4" />
+</Button>
+
+
         </div>
 
         <div className="p-3">

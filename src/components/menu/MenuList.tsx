@@ -38,7 +38,7 @@ export function MenuList() {
         <DietaryFilters filters={filters} onChange={setFilters} />
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-4 mt-6">
         {filteredItems.map((item) => (
           <MenuItem key={item.id} item={item} />
         ))}

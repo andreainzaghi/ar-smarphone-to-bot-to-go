@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Check, CreditCard, Star } from 'lucide-react';
+import {  CreditCard, Star } from 'lucide-react';
 import {
   Dialog,
   DialogContent,

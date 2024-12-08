@@ -1,4 +1,4 @@
-import { Menu, ShoppingBag, MessageSquare } from 'lucide-react';
+import {  ShoppingBag } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/hooks/use-cart';

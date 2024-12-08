@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Camera, XCircle } from 'lucide-react';
+import {  XCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,

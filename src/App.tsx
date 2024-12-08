@@ -45,29 +45,29 @@ export default function App() {
 
       {/* Alert */}
       {showAlert && (
-       <Dialog open={showAlert}>
-       <DialogContent className="max-w-md bg-gray-800 text-white shadow-lg rounded-lg p-6">
-         <DialogHeader>
-           <DialogTitle className="text-2xl font-bold text-white">Attenzione!</DialogTitle>
-           <DialogDescription className="mt-2 text-gray-100">
-             Per un servizio ottimale, ti preghiamo di mantenere l'app sempre aperta durante il servizio. L'app è il tuo cameriere personale e gestirà:
-             <ul className="list-disc ml-4 mt-3 space-y-2">
-               <li>Tempistiche di servizio</li>
-               <li>Eventuali richieste speciali</li>
-               <li>Scelta del menu e pagamento</li>
-               <li>Possibilità di chiamare il cameriere</li>
-             </ul>
-           </DialogDescription>
-         </DialogHeader>
-         <button
-           onClick={handleAlertClose}
-           className="mt-6 w-full bg-white text-gray-800 font-medium py-3 px-4 rounded-md hover:bg-gray-200 transition"
-         >
-           Ho capito
-         </button>
-       </DialogContent>
-     </Dialog>
-     
+   <Dialog open={showAlert}>
+   <DialogContent className="max-w-md bg-gray-800 text-white shadow-lg rounded-lg p-6">
+     <DialogHeader>
+       <DialogTitle className="text-2xl font-bold text-white">Attenzione!</DialogTitle>
+       <DialogDescription className="mt-2 text-gray-400">
+         Per un servizio ottimale, ti preghiamo di mantenere l'app sempre aperta durante il servizio. L'app è il tuo cameriere personale e gestirà:
+         <ul className="list-disc ml-4 mt-3 space-y-2">
+           <li>Tempistiche di servizio</li>
+           <li>Eventuali richieste speciali</li>
+           <li>Scelta del menu e pagamento</li>
+           <li>Possibilità di chiamare il cameriere</li>
+         </ul>
+       </DialogDescription>
+     </DialogHeader>
+     <button
+       onClick={handleAlertClose}
+       className="mt-6 w-full bg-white text-gray-800 font-medium py-3 px-4 rounded-md hover:bg-gray-200 transition"
+     >
+       Ho capito
+     </button>
+   </DialogContent>
+ </Dialog>
+ 
       )}
 
       <ChatbotButton />

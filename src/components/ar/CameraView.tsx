@@ -59,7 +59,7 @@ export function CameraView({ open, onOpenChange }: CameraViewProps) {
           <DialogTitle>AR View</DialogTitle>
         </DialogHeader>
         
-        <div className="relative aspect-video bg-black rounded-lg overflow-hidden">
+        <div className="relative aspect-video bg-gray-800 rounded-lg overflow-hidden">
           {error ? (
             <div className="absolute inset-0 flex items-center justify-center text-center p-4">
               <p className="text-destructive">{error}</p>

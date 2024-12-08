@@ -21,7 +21,7 @@ export const menuItems: MenuItem[] = [
   {
     id: '2',
     name: 'Spaghetti Carbonara',
-    description: 'Classic Roman pasta with eggs, pecorino cheese, guanciale, and black pepper',
+    description: 'Classic Roman pasta with eggs, pecorino cheese, guanciale, and gray-800 pepper',
     price: 16.99,
     image: 'https://images.unsplash.com/photo-1612874742237-6526221588e3',
     category: 'Pasta',
@@ -30,7 +30,7 @@ export const menuItems: MenuItem[] = [
       vegan: false,
       glutenFree: false,
     },
-    ingredients: ['Spaghetti', 'Eggs', 'Pecorino', 'Guanciale', 'Black Pepper'],
+    ingredients: ['Spaghetti', 'Eggs', 'Pecorino', 'Guanciale', 'gray-800 Pepper'],
     calories: 950,
     rating: 4.8,
     reviews: 256,

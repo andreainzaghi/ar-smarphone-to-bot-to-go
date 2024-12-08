@@ -172,7 +172,7 @@ export function ARView({ open, onOpenChange }: ARViewProps) {
           <DialogTitle>Augmented Reality View</DialogTitle>
         </DialogHeader>
 
-        <div className="relative aspect-video bg-black rounded-lg overflow-hidden">
+        <div className="relative aspect-video bg-gray-800 rounded-lg overflow-hidden">
           {error ? (
             <div className="absolute inset-0 flex items-center justify-center text-center p-4">
               <p className="text-destructive">{error}</p>
@@ -219,7 +219,7 @@ export function ARView({ open, onOpenChange }: ARViewProps) {
           </div>
 
           <div className="absolute bottom-4 left-4 right-4">
-            <p className="text-white text-sm text-center bg-black/50 rounded-lg p-2">
+            <p className="text-white text-sm text-center bg-gray-800/50 rounded-lg p-2">
               Tap anywhere to place the dish in the real world
             </p>
           </div>

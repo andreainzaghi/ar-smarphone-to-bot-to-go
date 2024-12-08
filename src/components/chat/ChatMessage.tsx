@@ -18,7 +18,7 @@ export function ChatMessage({ message }: ChatMessageProps) {
     >
       <Avatar className={`h-8 w-8 ${isBot ? 'bg-primary' : 'bg-secondary'}`}>
         <AvatarFallback className="text-background">
-          {isBot ? <Bot className="h-4 w-4 text-black" /> : <User className="h-4 w-4" />}
+          {isBot ? <Bot className="h-4 w-4 text-gray-800" /> : <User className="h-4 w-4" />}
         </AvatarFallback>
       </Avatar>
       <div

@@ -26,6 +26,7 @@ export function MenuItem({ item }: MenuItemProps) {
           {item.dietary.vegetarian && (
             <span className="absolute top-1 right-1 bg-green-500 text-white text-[10px] px-2 py-0.5 rounded-full">
               Vegetarian
+              
             </span>
           )}
   <Button
@@ -52,7 +53,7 @@ export function MenuItem({ item }: MenuItemProps) {
           
           <div className="flex items-center justify-between mt-3">
             <div className="flex items-center gap-1">
-              
+
               <span className="text-yellow-400 text-xs">★</span>
               <span className="text-xs">{item.rating}</span>
               <span className="text-xs text-muted-foreground">

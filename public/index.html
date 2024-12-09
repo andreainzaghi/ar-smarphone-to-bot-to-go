@@ -58,10 +58,11 @@
 
       <!-- Camera configurata per usare la fotocamera posteriore -->
       <a-camera
-        position="0 0 0"
-        look-controls="enabled: false"
-        mindar-camera="facingMode: environment"
-      ></a-camera>
+      position="0 0 0"
+      look-controls="enabled: false"
+      mindar-camera="facingMode: environment"
+    />
+    </a-camera>
 
       <a-entity mindar-image-target="targetIndex: 0">
         <a-gltf-model
@@ -84,3 +85,108 @@
     </a-scene>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="/aframe.min.js"></script>
+    <script src="/aframe-extras.min.js"></script>
+    <script src="/mindar-image-aframe.prod.js"></script>
+    <title>AR View</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      .back-button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        z-index: 1000;
+      }
+      .back-button:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+   
+    <button class="back-button" onclick="window.history.back()">Back</button>
+
+   
+    <a-scene
+      mindar-image="imageTargetSrc: /band.mind; maxTrack: 2"
+      color-space="sRGB"
+      renderer="colorManagement: true, physicallyCorrectLights"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+    >
+      <a-assets>
+        <a-asset-item id="bearModel" src="/scene.gltf"></a-asset-item>
+
+        <a-asset-item
+          id="raccoonModel"
+          src="/racoon.gltf"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-light type="directional" position="0 2 5" intensity="1"></a-light>
+      <a-light type="ambient" intensity="0.5"></a-light>
+
+      <a-camera
+      position="0 0 0"
+      look-controls="enabled: false"
+      mindar-camera="facingMode: environment"
+    />
+    </a-camera>
+
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model
+          rotation="0 0 0"
+          position="0 -0.25 0"
+          scale="0.05 0.05 0.05"
+          src="#raccoonModel"
+          animation-mixer
+        ></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 1">
+        <a-gltf-model
+          rotation="0 0 0"
+          position="0 -0.25 0"
+          scale="0.05 0.05 0.05"
+          src="#bearModel"
+          animation-mixer
+        ></a-gltf-model>
+      </a-entity>
+    </a-scene>
+  </body>
+</html> -->

@@ -235,7 +235,7 @@ export function ARView() {
   return (
     <div className="h-screen w-full">
       <iframe
-        src="/index.html"
+        src="/indarex.html"
         title="AR View"
         className="w-full h-full"
         frameBorder="0"

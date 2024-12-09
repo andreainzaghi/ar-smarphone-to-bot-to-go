@@ -228,7 +228,7 @@
 //     </Dialog>
 //   );
 // }
-import React from 'react';
+// import React from 'react';
 
 export function ARView() {
   return (

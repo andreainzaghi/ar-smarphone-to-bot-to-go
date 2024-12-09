@@ -1,5 +1,5 @@
 import { Plus, ViewIcon } from 'lucide-react';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { MenuItem as MenuItemType } from '@/types';
@@ -13,7 +13,7 @@ interface MenuItemProps {
 
 export function MenuItem({ item }: MenuItemProps) {
   const { addItem } = useCart();
-  const [showAR, setShowAR] = useState(false);
+  // const [showAR, setShowAR] = useState(false);
   const navigate = useNavigate();
 
   return (

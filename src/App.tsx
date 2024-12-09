@@ -9,6 +9,7 @@ import { OrdersPage } from '@/pages/OrdersPage';
 import { ChatbotButton } from '@/components/chat/ChatbotButton';
 import { Toaster } from '@/components/ui/sonner';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { ARView } from '@/components/ar/ARView'; // Importa la nuova pagina
 
 export default function App() {
   const location = useLocation();
@@ -40,6 +41,8 @@ export default function App() {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/chat" element={<ChatbotPage />} />
           <Route path="/orders" element={<OrdersPage />} />
+          <Route path="/ar-view" element={<ARView />} /> {/* Nuova rotta */}
+
         </Routes>
       </AnimatePresence>
 

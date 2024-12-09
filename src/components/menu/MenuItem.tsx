@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { MenuItem as MenuItemType } from '@/types';
 import { useCart } from '@/hooks/use-cart';
-import { ARView } from '@/components/ar/ARView';
+// import { ARView } from '@/components/ar/ARView';
+import { useNavigate } from 'react-router-dom';
 
 interface MenuItemProps {
   item: MenuItemType;
@@ -13,6 +14,7 @@ interface MenuItemProps {
 export function MenuItem({ item }: MenuItemProps) {
   const { addItem } = useCart();
   const [showAR, setShowAR] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -26,17 +28,17 @@ export function MenuItem({ item }: MenuItemProps) {
           {item.dietary.vegetarian && (
             <span className="absolute top-1 right-1 bg-green-500 text-white text-[10px] px-2 py-0.5 rounded-full">
               Vegetarian
-              
+
             </span>
           )}
-  <Button
-  variant="secondary"
-  size="icon"
-  className="absolute top-1 left-1"
-  onClick={() => (window.location.href = '/index.html')}
->
-  <ViewIcon className="h-4 w-4" />
-</Button>
+<Button
+        variant="secondary"
+        size="icon"
+        className="absolute top-1 left-1"
+        onClick={() => navigate('/ar-view')}
+      >
+        <ViewIcon className="h-4 w-4" />
+      </Button>
 
 
         </div>
@@ -67,7 +69,7 @@ export function MenuItem({ item }: MenuItemProps) {
         </div>
       </Card>
 
-      <ARView open={showAR} onOpenChange={setShowAR} />
+      {/* <ARView open={showAR} onOpenChange={setShowAR} /> */}
     </>
   );
 }

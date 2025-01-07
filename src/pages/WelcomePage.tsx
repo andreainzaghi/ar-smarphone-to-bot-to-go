@@ -22,7 +22,7 @@ export function WelcomePage() {
           transition={{ delay: 0.4 }}
         >
           <h1 className="text-4xl font-bold">To Bot</h1>
-          <h2 className="text-2xl text-muted-foreground">To Smart</h2>
+          <h2 className="text-2xl text-muted-foreground">To Go</h2>
         </motion.div>
       </motion.div>
       

@@ -63,7 +63,7 @@ export function MenuItem({ item }: MenuItemProps) {
               </span>
             </div>
             <Button size="sm" onClick={() => addItem(item)}>
-              <Plus className="h-6 w-14" />
+              <Plus className="h-6 w-9" />
             </Button>
           </div>
         </div>

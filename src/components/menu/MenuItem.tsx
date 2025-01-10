@@ -49,14 +49,14 @@ function ThreeScene() {
     camera.add(plane);
 
     // Luci avanzate nella scena
-    const ambientLight = new THREE.AmbientLight(0xffffff, 3);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 2.3);
     scene.add(ambientLight);
 
-    const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x444444, 2);
+    const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0xfff, 2);
     hemisphereLight.position.set(0, 20, 0);
     scene.add(hemisphereLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
     directionalLight.position.set(5, 10, 7.5);
     directionalLight.castShadow = true;
     scene.add(directionalLight);

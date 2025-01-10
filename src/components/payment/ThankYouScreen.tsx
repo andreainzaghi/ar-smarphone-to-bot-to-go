@@ -15,19 +15,9 @@ export function ThankYouScreen({ orderId }: ThankYouScreenProps) {
 
   // Stato per i rating e il feedback
   const [serviceRating, setServiceRating] = useState<number>(0);
-  const [foodRating, setFoodRating] = useState<number>(0);
   const [feedback, setFeedback] = useState<string>('');
 
-  // Funzione di gestione della sottomissione della recensione
-  const handleReviewSubmit = () => {
-    // Qui puoi elaborare il feedback, ad esempio inviarlo a un API server
-    console.log('Service Rating:', serviceRating);
-    console.log('Food Rating:', foodRating);
-    console.log('Feedback:', feedback);
 
-    // Prosegui con il flusso di pagamento o altra logica successiva
-    navigate('/payment', { state: { serviceRating, foodRating, feedback, orderId } });
-  };
 
   return (
     <motion.div
@@ -69,9 +59,6 @@ export function ThankYouScreen({ orderId }: ThankYouScreenProps) {
                   ))}
                 </div>
               </div>
-
-             
-
               <div className="space-y-2">
                 <Label>Additional Feedback</Label>
                 <Textarea
@@ -81,8 +68,6 @@ export function ThankYouScreen({ orderId }: ThankYouScreenProps) {
                 />
               </div>
             </div>
-
-     
           </div>
 
           <div className="space-y-2 mt-4">

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CreditCard, Star, Camera } from 'lucide-react';
+import { CreditCard, Camera } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -76,9 +76,7 @@ export function PaymentModal({ open, onOpenChange, skipReview = false }: Payment
     onOpenChange(false);
     setTimeout(() => {
       setStep('review');
-      setServiceRating(0);
-      setFoodRating(0);
-      setFeedback('');
+    
       setFormData({
         firstName: '',
         lastName: '',

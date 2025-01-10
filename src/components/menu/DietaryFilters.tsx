@@ -26,7 +26,6 @@ export function DietaryFilters({ filters, onChange }: DietaryFiltersProps) {
     <div className="space-y-4 p-4 bg-background rounded-lg shadow-md">
       {/* Sezione filtri dietetici */}
       <div>
-        <h3 className="text-lg font-semibold mb-2">Dietary Restrictions</h3>
         <div className="flex flex-wrap gap-2">
           <Button
             variant={filters.vegetarian ? 'default' : 'outline'}
@@ -49,12 +48,18 @@ export function DietaryFilters({ filters, onChange }: DietaryFiltersProps) {
           >
             Gluten Free
           </Button>
+          <Button
+            variant={filters.dolci ? 'default' : 'outline'}
+            size="sm"
+            onClick={() => handleToggle('dolci')}
+          >
+            Dolci
+          </Button>
         </div>
       </div>
 
       {/* Sezione categorie dei piatti */}
       <div>
-        <h3 className="text-lg font-semibold mb-2">Course Type</h3>
         <div className="flex flex-wrap gap-2">
           <Button
             variant={filters.antipasti ? 'default' : 'outline'}
@@ -62,6 +67,13 @@ export function DietaryFilters({ filters, onChange }: DietaryFiltersProps) {
             onClick={() => handleToggle('antipasti')}
           >
             Antipasti
+          </Button>
+          <Button
+            variant={filters.antipasti ? 'default' : 'outline'}
+            size="sm"
+            onClick={() => handleToggle('antipasti')}
+          >
+            Contorni
           </Button>
           <Button
             variant={filters.primi ? 'default' : 'outline'}
@@ -78,13 +90,7 @@ export function DietaryFilters({ filters, onChange }: DietaryFiltersProps) {
             Secondi
           </Button>
         
-          <Button
-            variant={filters.dolci ? 'default' : 'outline'}
-            size="sm"
-            onClick={() => handleToggle('dolci')}
-          >
-            Dolci
-          </Button>
+  
         </div>
       </div>
     </div>

@@ -7,67 +7,54 @@ import {
   Leaf,
   Heart
 } from 'lucide-react';
+import decisionTree from './decisionTree.json'; // Assicurati che il percorso sia corretto
+
+interface Action {
+  id: string;
+  label: string;
+  icon: React.ElementType;
+  message: string;
+}
 
 interface QuickActionsProps {
   onActionSelect: (action: string) => void;
 }
 
+// Mappa degli ID delle categorie principali agli icone corrispondenti
+const iconMap: Record<string, React.ElementType> = {
+  menu: UtensilsCrossed,
+  allergies: AlertCircle,
+  preparation: Clock,
+  popular: Star,
+  vegetarian: Leaf,
+  recommendations: Heart
+};
+
 export function QuickActions({ onActionSelect }: QuickActionsProps) {
-  const actions = [
-    {
-      id: 'menu',
-      label: "Today's Menu",
-      icon: UtensilsCrossed,
-      message: "Can you tell me about today's special dishes?",
-    },
-    {
-      id: 'allergies',
-      label: 'Allergies',
-      icon: AlertCircle,
-      message: 'What dishes are safe for someone with food allergies?',
-    },
-    {
-      id: 'preparation',
-      label: 'Prep Time',
-      icon: Clock,
-      message: 'How long does it take to prepare the dishes?',
-    },
-    {
-      id: 'popular',
-      label: 'Popular',
-      icon: Star,
-      message: 'What are your most popular dishes?',
-    },
-    {
-      id: 'vegetarian',
-      label: 'Vegetarian',
-      icon: Leaf,
-      message: 'What vegetarian options do you have?',
-    },
-    {
-      id: 'recommendations',
-      label: 'For Me',
-      icon: Heart,
-      message: 'Can you recommend something based on my preferences?',
-    },
-  ];
+  // Estrai i primi livelli dell'albero decisionale
+  const mainCategories = decisionTree.children;
+
+  // Crea un array di azioni basato sulle categorie principali
+  const actions: Action[] = mainCategories.map((category) => ({
+    id: category.id,
+    label: category.label,
+    icon: iconMap[category.id] || UtensilsCrossed, // usa un'icona di default se non disponibile
+    message: category.message || ''
+  }));
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 gap-2 p-4">
-      {actions.map((action) => {
-        const Icon = action.icon;
-        return (
-          <Button
-            key={action.id}
-            variant="outline"
-            className="flex flex-col items-center gap-2 h-auto py-2"
-            onClick={() => onActionSelect(action.message)}
-          >
-            <Icon className="h-4 w-4" />
-            <span className="text-xs">{action.label}</span>
-          </Button>
-        );
-      })}
+      {actions.map(({ id, label, icon: Icon, message }) => (
+        <Button
+          key={id}
+          variant="outline"
+          className="flex flex-col items-center gap-2 h-auto py-2"
+          onClick={() => onActionSelect(message)}
+        >
+          <Icon className="h-4 w-4" />
+          <span className="text-xs">{label}</span>
+        </Button>
+      ))}
     </div>
   );
 }

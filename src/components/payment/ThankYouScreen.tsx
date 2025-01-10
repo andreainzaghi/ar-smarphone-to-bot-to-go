@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
 
 interface ThankYouScreenProps {
   orderId: string;
@@ -9,6 +12,22 @@ interface ThankYouScreenProps {
 
 export function ThankYouScreen({ orderId }: ThankYouScreenProps) {
   const navigate = useNavigate();
+
+  // Stato per i rating e il feedback
+  const [serviceRating, setServiceRating] = useState<number>(0);
+  const [foodRating, setFoodRating] = useState<number>(0);
+  const [feedback, setFeedback] = useState<string>('');
+
+  // Funzione di gestione della sottomissione della recensione
+  const handleReviewSubmit = () => {
+    // Qui puoi elaborare il feedback, ad esempio inviarlo a un API server
+    console.log('Service Rating:', serviceRating);
+    console.log('Food Rating:', foodRating);
+    console.log('Feedback:', feedback);
+
+    // Prosegui con il flusso di pagamento o altra logica successiva
+    navigate('/payment', { state: { serviceRating, foodRating, feedback, orderId } });
+  };
 
   return (
     <motion.div
@@ -31,8 +50,42 @@ export function ThankYouScreen({ orderId }: ThankYouScreenProps) {
           <p className="text-muted-foreground mb-6">
             Your order #{orderId.slice(0, 8)} has been confirmed. We'll start preparing your delicious meal right away!
           </p>
-          
-          <div className="space-y-2">
+
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <div>
+                <Label>Service Rating</Label>
+                <div className="flex gap-2 mt-2">
+                  {[1, 2, 3, 4, 5].map((value) => (
+                    <Button
+                      key={value}
+                      variant="ghost"
+                      size="sm"
+                      className={value <= serviceRating ? 'text-yellow-400' : ''}
+                      onClick={() => setServiceRating(value)}
+                    >
+                      <Star className={`h-6 w-6 ${value <= serviceRating ? 'fill-current' : ''}`} />
+                    </Button>
+                  ))}
+                </div>
+              </div>
+
+             
+
+              <div className="space-y-2">
+                <Label>Additional Feedback</Label>
+                <Textarea
+                  placeholder="Tell us about your dining experience..."
+                  value={feedback}
+                  onChange={(e) => setFeedback(e.target.value)}
+                />
+              </div>
+            </div>
+
+     
+          </div>
+
+          <div className="space-y-2 mt-4">
             <Button 
               className="w-full" 
               onClick={() => navigate('/menu')}

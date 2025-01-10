@@ -1,0 +1,238 @@
+{
+    "id": "root",
+    "label": "Seleziona un argomento",
+    "children": [
+      {
+        "id": "menu",
+        "label": "Menù",
+        "message": "Vuoi esplorare il nostro menù?",
+        "children": [
+          {
+            "id": "specials",
+            "label": "Piatti del giorno",
+            "message": "Che piatti speciali offriamo oggi?",
+            "children": [
+              {
+                "id": "appetizers",
+                "label": "Antipasti",
+                "message": "Vuoi conoscere gli antipasti speciali?",
+                "children": []
+              },
+              {
+                "id": "main_courses",
+                "label": "Portate principali",
+                "message": "Quali sono i piatti principali del giorno?",
+                "children": []
+              },
+              {
+                "id": "desserts",
+                "label": "Dessert",
+                "message": "Quali dessert abbiamo in offerta?",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "full_menu",
+            "label": "Menù completo",
+            "message": "Vuoi vedere l'intero menù?",
+            "children": []
+          },
+          {
+            "id": "beverages",
+            "label": "Bevande",
+            "message": "Quali bevande offriamo?",
+            "children": []
+          },
+          {
+            "id": "chef_specials",
+            "label": "Specialità dello Chef",
+            "message": "Vuoi sapere le specialità consigliate dallo chef?",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "vegetarian",
+        "label": "Vegetariano",
+        "message": "Sei interessato a piatti vegetariani?",
+        "children": [
+          {
+            "id": "vegan_options",
+            "label": "Opzioni vegane",
+            "message": "Vuoi vedere opzioni vegane?",
+            "children": []
+          },
+          {
+            "id": "salads",
+            "label": "Insalate",
+            "message": "Vuoi sapere quali insalate offriamo?",
+            "children": []
+          },
+          {
+            "id": "pasta",
+            "label": "Pasta",
+            "message": "Quali piatti di pasta vegetariani sono disponibili?",
+            "children": []
+          },
+          {
+            "id": "desserts_veg",
+            "label": "Dessert vegetariani",
+            "message": "Vuoi scoprire i dessert vegetariani?",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "allergies",
+        "label": "Allergie",
+        "message": "Hai allergie alimentari?",
+        "children": [
+          {
+            "id": "nut_free",
+            "label": "Senza noci",
+            "message": "Cerchi piatti senza noci?",
+            "children": []
+          },
+          {
+            "id": "gluten_free",
+            "label": "Senza glutine",
+            "message": "Cerchi opzioni senza glutine?",
+            "children": []
+          },
+          {
+            "id": "dairy_free",
+            "label": "Senza lattosio",
+            "message": "Hai bisogno di piatti senza lattosio?",
+            "children": []
+          },
+          {
+            "id": "seafood_free",
+            "label": "Senza frutti di mare",
+            "message": "Cerchi piatti senza frutti di mare?",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "preparation",
+        "label": "Preparazione",
+        "message": "Vuoi sapere di più sui tempi di preparazione?",
+        "children": [
+          {
+            "id": "quick_meals",
+            "label": "Piatti veloci",
+            "message": "Cerchi piatti che si preparano rapidamente?",
+            "children": []
+          },
+          {
+            "id": "detailed_prep",
+            "label": "Dettagli sulla preparazione",
+            "message": "Desideri sapere come prepariamo i nostri piatti?",
+            "children": []
+          },
+          {
+            "id": "cooking_methods",
+            "label": "Metodi di cottura",
+            "message": "Vuoi conoscere i metodi di cottura utilizzati?",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "popular",
+        "label": "Popolari",
+        "message": "Ti interessano i piatti più richiesti?",
+        "children": [
+          {
+            "id": "top_rated",
+            "label": "I più votati",
+            "message": "Vuoi sapere quali sono i piatti più votati dai clienti?",
+            "children": []
+          },
+          {
+            "id": "chef_recommendations",
+            "label": "Consigli dello Chef",
+            "message": "Vuoi ricevere i consigli dello Chef?",
+            "children": []
+          },
+          {
+            "id": "seasonal_favorites",
+            "label": "Preferiti di stagione",
+            "message": "Cerchi piatti di stagione molto popolari?",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "recommendations",
+        "label": "Raccomandazioni personalizzate",
+        "message": "Vuoi un consiglio personalizzato?",
+        "children": [
+          {
+            "id": "based_on_history",
+            "label": "Basato sulla cronologia",
+            "message": "Vuoi raccomandazioni basate sui tuoi ordini precedenti?",
+            "children": []
+          },
+          {
+            "id": "new_experiences",
+            "label": "Nuove esperienze",
+            "message": "Ti piacerebbe provare qualcosa di nuovo?",
+            "children": []
+          },
+          {
+            "id": "dietary_needs",
+            "label": "Esigenze dietetiche",
+            "message": "Hai esigenze dietetiche particolari?",
+            "children": [
+              {
+                "id": "low_calorie",
+                "label": "Basso contenuto calorico",
+                "message": "Vuoi piatti a basso contenuto calorico?",
+                "children": []
+              },
+              {
+                "id": "high_protein",
+                "label": "Alta proteina",
+                "message": "Cerchi piatti ricchi di proteine?",
+                "children": []
+              },
+              {
+                "id": "low_carb",
+                "label": "Basso contenuto di carboidrati",
+                "message": "Vuoi piatti a basso contenuto di carboidrati?",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "feedback",
+        "label": "Feedback",
+        "message": "Hai commenti o suggerimenti?",
+        "children": [
+          {
+            "id": "positive_feedback",
+            "label": "Feedback positivo",
+            "message": "Vuoi lasciare un feedback positivo?",
+            "children": []
+          },
+          {
+            "id": "negative_feedback",
+            "label": "Feedback negativo",
+            "message": "Vuoi segnalarci un problema?",
+            "children": []
+          },
+          {
+            "id": "suggestions",
+            "label": "Suggerimenti",
+            "message": "Hai suggerimenti per migliorare?",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+  

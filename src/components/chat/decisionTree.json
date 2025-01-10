@@ -164,50 +164,7 @@
           }
         ]
       },
-      {
-        "id": "recommendations",
-        "label": "Raccomandazioni personalizzate",
-        "message": "Vuoi un consiglio personalizzato?",
-        "children": [
-          {
-            "id": "based_on_history",
-            "label": "Basato sulla cronologia",
-            "message": "Vuoi raccomandazioni basate sui tuoi ordini precedenti?",
-            "children": []
-          },
-          {
-            "id": "new_experiences",
-            "label": "Nuove esperienze",
-            "message": "Ti piacerebbe provare qualcosa di nuovo?",
-            "children": []
-          },
-          {
-            "id": "dietary_needs",
-            "label": "Esigenze dietetiche",
-            "message": "Hai esigenze dietetiche particolari?",
-            "children": [
-              {
-                "id": "low_calorie",
-                "label": "Basso contenuto calorico",
-                "message": "Vuoi piatti a basso contenuto calorico?",
-                "children": []
-              },
-              {
-                "id": "high_protein",
-                "label": "Alta proteina",
-                "message": "Cerchi piatti ricchi di proteine?",
-                "children": []
-              },
-              {
-                "id": "low_carb",
-                "label": "Basso contenuto di carboidrati",
-                "message": "Vuoi piatti a basso contenuto di carboidrati?",
-                "children": []
-              }
-            ]
-          }
-        ]
-      },
+      
       {
         "id": "feedback",
         "label": "Feedback",

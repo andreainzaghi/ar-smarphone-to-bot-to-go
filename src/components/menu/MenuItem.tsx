@@ -194,6 +194,8 @@ export function MenuItem({ item }: MenuItemProps) {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"
           onClick={() => setShowSpaghettiModal(false)}
         >
+          
+          
           <div className="relative w-full h-full" onClick={(e) => e.stopPropagation()}>
             <ThreeScene />
           </div>

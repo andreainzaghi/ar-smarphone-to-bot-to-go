@@ -22,7 +22,7 @@ export const menuItems: MenuItem[] = [
     name: 'Spaghetti Carbonara',
     description: 'Classic Roman pasta with eggs, pecorino cheese, guanciale, and black pepper',
     price: 16.99,
-    image: 'https://images.unsplash.com/photo-1612874742237-6526221588e3',
+    image: 'spagg.png',
     category: 'Pasta',
     dietary: {
       vegetarian: false,
@@ -36,10 +36,10 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: '3',
-    name: 'Quinoa Buddha Bowl',
+    name: 'Poke Bowl Quinoa',
     description: 'Nutritious bowl with quinoa, roasted vegetables, avocado, and tahini dressing',
     price: 15.99,
-    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c',
+    image: 'pok.jpg',
     category: 'Healthy',
     dietary: {
       vegetarian: true,

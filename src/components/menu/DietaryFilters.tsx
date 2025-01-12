@@ -48,13 +48,7 @@ export function DietaryFilters({ filters, onChange }: DietaryFiltersProps) {
           >
             Gluten Free
           </Button>
-          <Button
-            variant={filters.dolci ? 'default' : 'outline'}
-            size="sm"
-            onClick={() => handleToggle('dolci')}
-          >
-            Dolci
-          </Button>
+         
         </div>
       </div>
 

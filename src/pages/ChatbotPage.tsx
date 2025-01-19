@@ -87,6 +87,7 @@ export function ChatbotPage() {
       exit={{ opacity: 0 }}
       className="min-h-screen flex flex-col bg-background bg-gray-200"
     >
+      
       <header className="border-b p-4 bg-card">
         <div className="container max-w-2xl mx-auto flex items-center justify-between">
           <Button variant="ghost" onClick={() => navigate('/menu')}>
